@@ -280,21 +280,6 @@ static Drw *drw;
 static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
 
-/*static int useargb = 0;
-static Visual *visual;
-static int depth;
-static Colormap cmap;
-
-static int useargb = 0;
-static Visual *visual;
-static int depth;
-static Colormap cmap;
-
-static int useargb = 0;
-static Visual *visual;
-static int depth;
-static Colormap cmap;*/
-
 /* configuration, allows nested code to access above variables */
 #include "config.h"
 

@@ -82,9 +82,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *soundup[]  = { "amixer", "-q", "sset", "Master", "5%+", NULL };
-static const char *sounddown[]  = { "amixer", "-q", "sset", "Master", "5%-", NULL };
-static const char *mute[]  = { "amixer", "-q", "sset", "Master", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -126,25 +123,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("chromium") },
-	{ MODKEY,                       XK_g,      spawn,          SHCMD("gimp") },
-	{ ALTKEY,                       XK_e,      spawn,          SHCMD("emacs") },
-	{ ALTKEY,                       XK_s,      spawn,          SHCMD("spotify") },
-	{ ALTKEY,                       XK_d,      spawn,          SHCMD("discord") },
-	{ ALTKEY,                       XK_t,      spawn,          SHCMD("urxvt -e gotop") },
-	{ ALTKEY,                       XK_a,      spawn,          SHCMD("st -e alsamixer") },
-	{ ALTKEY,                       XK_m,      spawn,          SHCMD("urxvt -e ranger") },
-	{ 0,         			XK_Print,  spawn,	   SHCMD("scrot") },
-        { MODKEY,			XK_Print,  spawn,	   SHCMD("scrot -s") },
-	{ 0,             XF86XK_MonBrightnessDown, spawn,          SHCMD("light -U 10") },
-	{ 0,              XF86XK_MonBrightnessUp,  spawn,          SHCMD("light -A 10") },
-	{ 0,                     XF86XK_AudioMute, spawn,          {.v = mute } },
-        { 0,              XF86XK_AudioRaiseVolume, spawn,          {.v = soundup } },
-        { 0,              XF86XK_AudioLowerVolume, spawn,          {.v = sounddown } },
-	/*{ 0,                     XF86XK_Display,   spawn,          SHCMD("xrandr --output VGA-1 --auto --left-of eDP-1")
-	{ MODKEY,                XF86XK_Display,   spawn,          SHCMD("xrandr --output VGA-1 --auto --right-of eDP-1")*/
-
-	/*{ ALTKEY|ShiftMask,          XK_BackSpace, self_restart,   {0} },*/
 };
 
 /* button definitions */
