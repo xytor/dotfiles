@@ -1,0 +1,22 @@
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+# screenshoot
+{_,shift,ctrl +} Print
+	scrot {_,-s,-b} 
+# programs
+alt + {g,e,s,d,t}
+	{gimp,emacs,spotify,discord,st -e gotop}
+super + c
+	chromium
+# brightness
+XF86MonBrightness{Down,Up}
+	light {-U,-A} 10
+ctrl+ alt + {l,r}
+	xrandr --output VGA-1 --auto {--left-of,--right-of} eDP-1 
+# mute
+XF86AudioMute
+	amixer sset Master toggle
+# volume control
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-}
