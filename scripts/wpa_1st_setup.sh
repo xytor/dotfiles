@@ -8,6 +8,6 @@ echo "Write your ssid"
 read ssid
 echo "Write password"
 read -s passwd
-wpa_passphrase $essid $passwd >> /etc/wpa_supplicant/wpa_supplicant-$interface.conf
+wpa_passphrase $ssid $passwd >> /etc/wpa_supplicant/wpa_supplicant-$interface.conf
 wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/wpa_supplicant-$interface.conf
 echo "All done!"
